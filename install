@@ -1,0 +1,17 @@
+#!/bin/zsh
+
+if [ -L "$HOME/.zshrc" ]; then
+  echo "Found a symbolic link to .zshrc, removing"
+  rm -rf $HOME/.zshrc
+elif [ -f $HOME/.zshrc ]; then
+  echo "Found a .zshrc, moving to .zshrc_old"
+  mv $HOME/.zshrc $HOME/.zshrc_old
+fi
+
+echo "Creating a symbolic link to .zshrc"
+ln -s $PWD/zshrc $HOME/.zshrc
+
+echo "Loading .zshrc"
+source "$HOME/.zshrc"
+
+echo "Finished."
