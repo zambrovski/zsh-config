@@ -1,0 +1,5 @@
+alias axon.create="docker run -d --name axon -p 8024:8024 -p 8124:8124 -v ~/.axon:/opt/axonserver/data axoniq/axonserver"
+alias axon.clean="ls -al ~/.axon"
+alias axon.start="docker start axon"
+alias axon.kill="docker stop axon"
+alias axon.delete="docker rm axon && docker rmi --force axoniq/axonserver"
