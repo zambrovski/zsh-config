@@ -14,6 +14,7 @@ function start_agent {
 	ssh-add $HOME/.ssh/nas
 	ssh-add $HOME/.ssh/gitlab_rsa
 	ssh-add $HOME/.ssh/github_rsa
+	ssh-add $HOME/.ssh/lht_rsa
 }
 
 # Source SSH settings
