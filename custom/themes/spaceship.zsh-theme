@@ -1,0 +1,1 @@
+/home/simon/zsh-config/custom/themes/spaceship-prompt/spaceship.zsh-theme

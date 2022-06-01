@@ -1,6 +1,6 @@
 #!/bin/bash
 
 #
-# Set git credential cache to 8 hours
+# Set git credential cache to 80 hours
 #
-alias git.cache="git config credential.helper 'cache --timeout=28800'"
+alias git.cache="git config credential.helper 'cache --timeout=288000'"

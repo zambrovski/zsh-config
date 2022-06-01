@@ -1,5 +1,5 @@
 # If you come from bash you might have to change your $PATH.
-export PATH=$HOME/bin:/usr/local/bin:/opt/oc-client/current:/opt/camunda-modeller/current:$PATH
+export PATH=$HOME/.jenv/bin:$HOME/bin:/usr/local/bin:/opt/oc-client/current:/opt/camunda-modeller/current:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
@@ -10,7 +10,12 @@ ZSH_CONFIG=$(dirname $(readlink $HOME/.zshrc))
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="agnoster"
+# ZSH_THEME="agnoster"
+ZSH_THEME="spaceship"
+#
+# Disable Kube Context Show
+#
+SPACESHIP_KUBECONTEXT_SHOW="false"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -64,7 +69,7 @@ ZSH_CUSTOM=$ZSH_CONFIG/custom
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(docker git git-extras mvn pj thefuck)
+plugins=(docker docker-compose git git-extras mvn pj thefuck)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -98,3 +103,12 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #
 
+export GPG_TTY=$(tty)
+
+#
+# jEnv
+#
+eval "$(jenv init -)"
+
+export JAVA_HOME="$HOME/.jenv/versions/`jenv version-name`"
+alias jenv_set_java_home='export JAVA_HOME="$HOME/.jenv/versions/`jenv version-name`"'

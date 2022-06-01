@@ -4,7 +4,7 @@ alias gcb='gradle clean build'
 function gradle() {
   # Stop the search on this folder.
   # "/" is the highest possible, but you can go for $HOME for example
-  STOP="/"
+  STOP="~/projects"
 
   # Location of Maven.
   # $GRADLE_HOME/bin/mvn is an option...

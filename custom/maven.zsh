@@ -1,6 +1,6 @@
-alias mvn.install.skip="mvn clean install -DskipTests"
-
-alias mvn.install.docker="mvn clean install -PdockerBuild"
+alias mci=mvn clean install
+alias sbr=mvn spring-boot:run
+unalias mvnd
 
 function mvn.archetype() {
     mvn archetype:generate -DarchetypeArtifactId=maven-archetype-archetype -DgroupId=$1 -DartifactId=$2 ;
@@ -19,6 +19,14 @@ function mvn.install-file() {
   mvn org.apache.maven.plugins:maven-install-plugin:2.5:install-file \
       -Dfile=$1
 }
+
+fun mvnd() {
+    MVND_CMD=/opt/mvnd/current/bin/mvnd
+
+    echo "Calling mvnd $@"
+    $MVND_CMD $@
+}
+
 
 # dynamically choose mvnw or global.
 function mvn() {
